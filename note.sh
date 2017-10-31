@@ -22,7 +22,12 @@ fi
 
 if false; then
 .admin-openrc.sh文件的内容
-
-
-
+export OS_SERVICE_TOKEN=aaaaaa
+export OS_SERVICE_ENDPOINT=http://172.16.92.30:35357/v2.0
+export OS_USERNAME=admin
+export OS_PASSWORD=aaaaaa
+export OS_TENANT_NAME=admin
+export OS_AUTH_URL=http://172.16.92.30:35357/v2.0
+export OS_REGION_NAME=BJPOC-REGION1
+export PYTHONIOENCODING=utf-8
 fi
