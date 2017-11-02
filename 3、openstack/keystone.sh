@@ -195,5 +195,34 @@ if false; then
 Role
     安全包括两部分： Authentication(认证)和Authorization(鉴权)
     Authentication 解决的是“你是谁？”的问题 Authorization 解决的是“你能干什么？”的问题
+    Keystone是借助Role来实现Authentication的：
+        1.Keystone定义Role
++----------------------------------+------------------+
+| ID                               | Name             |
++----------------------------------+------------------+
+| 32ba9a9a1c6748c5bc9c6263ce8c1551 | heat_stack_user  |
+| 3a30a32376a746dfa3e3b11762f7ee39 | admin            |
+| 9fe2ff9ee4384b1894a90878d3e92bab | _member_         |
+| ded206f3060f4163b7d1e4da089c630d | heat_stack_owner |
+| e55a202d8012497aafc4c10ca72ab82f | rating           |
++----------------------------------+------------------+
+fi
 
+if false; then
+什么是JWT
+    Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（(RFC 7519).
+    该token被设计为紧凑且安全的，特别适用于分布式站点的单点登录（SSO）场景
+
+基于token的鉴权机制
+    基于token的鉴权机制类似于http协议也是无状态的，它不需要在服务端去保留用户的认证信息或者会话信息。
+    这就意味着基于token认证机制的应用不需要去考虑用户在哪一台服务器登录了，这就为应用的扩展提供了便利。
+
+流程上是这样的
+    用户使用用户名密码来请求服务器
+    服务器进行验证用户的信息
+    服务器通过验证发送给用户一个token
+    客户端存储token，并在每次请求时附送上这个token值
+    服务端验证token值，并返回数据
+这个token必须要在每次请求时传递给服务端，它应该保存在请求头里，另外，服务端要支持CORS（跨来源资源共享）策略，
+一般我们在服务端这么做就可以了Access-Control-Allow-Origin。
 fi
