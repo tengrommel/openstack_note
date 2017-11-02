@@ -16,4 +16,25 @@ Image Service 的功能是管理 Image，让用户能够发现、获取和保存
     1、提供 REST API 让用户能够查询和获取 image 的元数据和 image 本身
     2、支持多种方式存储 image，包括普通的文件系统、Swift、Amazon S3 等
     3、对 Instance 执行 Snapshot 创建新的 image
+
+    glance image-list
+    glance image-delete id
 fi
+
+glance image-create
+glance image-delete
+glance image-update
+glance image-list
+glance image-show
+# neutron 管理的是子网和网络
+neutron net-create
+neutron net-list
+neutron net-update
+neutron net-show
+neutron net-delete
+
+neutron subnet-create
+neutron subnet-delete
+neutron subnet-list
+neutron subnet-show
+
